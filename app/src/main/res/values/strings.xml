@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Business Card</string>
+    <string name="Author">Siqi Zhao</string>
+    <string name="Title">Android Developer</string>
+    <string name="Github">Github: </string>
+    <string name="GithubAccount">\@Z-Siqi</string>
+</resources>
