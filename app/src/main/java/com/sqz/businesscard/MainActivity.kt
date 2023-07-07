@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -44,56 +45,55 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun BusinessCard(modifier: Modifier = Modifier) {
-    BusinessCardImage()
-    //Name and title show
+fun BusinessCard(modifier: Modifier = Modifier){
     Column(
-        modifier = modifier.padding(top = 380.dp, start = 80.dp, end = 80.dp),
-        verticalArrangement = Arrangement.Top,
+        modifier = modifier,
+        verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+        BusinessCardImage()
+        BusinessCardText()
+    }
+}
+
+@Composable
+fun BusinessCardText(modifier: Modifier = Modifier) {
+    Text(
+        text = stringResource(R.string.Author),
+        fontSize = 35.sp,
+        modifier = modifier.padding(top = 20.dp)
+    )
+    Text(
+        text = stringResource(R.string.Title),
+        modifier = modifier.padding(top = 20.dp),
+        fontWeight = FontWeight.Bold,
+        color = Color(0xFF3DDB83)
+    )
+    Row(
+        modifier = modifier.padding(top = 70.dp)
+    ){
         Text(
-            text = stringResource(R.string.Author),
-            fontSize = 35.sp
-        )
-        Text(
-            text = stringResource(R.string.Title),
-            modifier = modifier.padding(top = 10.dp),
+            text = stringResource(R.string.Github),
             fontWeight = FontWeight.Bold,
-            color = Color(0xFF3DDB83)
+            fontSize = 20.sp
         )
-        Row(
-            modifier = modifier.padding(top = 100.dp)
-        ){
-            Text(
-                text = stringResource(R.string.Github),
-                fontWeight = FontWeight.Bold,
-                fontSize = 20.sp
-            )
-            Text(
-                text = stringResource(R.string.GithubAccount),
-                modifier = modifier.padding(start = 5.dp),
-                fontSize = 20.sp
-            )
-        }
+        Text(
+            text = stringResource(R.string.GithubAccount),
+            modifier = modifier.padding(start = 5.dp),
+            fontSize = 20.sp
+        )
     }
 }
 
 @Composable
 fun BusinessCardImage(modifier: Modifier = Modifier) {
     val image = painterResource(R.drawable.android_logo)
-    Column(
-        modifier = modifier
-            .fillMaxSize()
-            .padding(top = 190.dp, bottom = 523.dp, start = 120.dp, end = 120.dp),
-        verticalArrangement = Arrangement.Top
-    ) {
-        Image(
-            painter = image,
-            contentDescription = null,
-            contentScale = ContentScale.FillBounds
-        )
-    }
+    Image(
+        painter = image,
+        contentDescription = null,
+        contentScale = ContentScale.Inside,
+        modifier = modifier.size(width = 150.dp, height = 150.dp)
+    )
 }
 
 //To check design preview in Android Studio
