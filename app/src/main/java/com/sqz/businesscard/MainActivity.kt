@@ -48,7 +48,7 @@ fun BusinessCard(modifier: Modifier = Modifier) {
     BusinessCardImage()
     //Name and title show
     Column(
-        modifier = modifier.padding(top = 380.dp, bottom = 250.dp, start = 80.dp, end = 80.dp),
+        modifier = modifier.padding(top = 380.dp, start = 80.dp, end = 80.dp),
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -91,7 +91,7 @@ fun BusinessCardImage(modifier: Modifier = Modifier) {
         Image(
             painter = image,
             contentDescription = null,
-            contentScale = ContentScale.Inside
+            contentScale = ContentScale.FillBounds
         )
     }
 }
