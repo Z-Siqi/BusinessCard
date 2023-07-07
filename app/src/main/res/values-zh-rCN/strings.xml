@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">名片</string>
+    <string name="Author">Siqi Zhao</string>
+    <string name="Title">Android Developer</string>
+    <string name="Github">Gitlub:</string>
+    <string name="GithubAccount">\@Z-Siqi</string>
+</resources>
